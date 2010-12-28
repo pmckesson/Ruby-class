@@ -1,0 +1,315 @@
+
+<html>
+<head><meta http-equiv="CACHE-CONTROL" content="NO-CACHE" /><meta http-equiv="PRAGMA" content="NO-CACHE" /><meta http-equiv="Expires" content="-1" /><title>
+	Introduction to Ruby Programming: Lesson 2
+</title><link href="./Stylesheets/classroom.css" rel="stylesheet" type="text/css" />
+
+    <script src="./Includes/classroom.js" language="javascript" type="text/javascript"></script>
+
+    <style type="text/css">
+        BODY
+        {
+            font-size: small;
+        }
+    </style>
+<link href="https://api.ed2go.com/CourseBuilder/2.0/images/resources/prod/global.css" rel="stylesheet" type="text/css" /><link href="https://api.ed2go.com/CourseBuilder/2.0/images/resources/prod/rby-0/course.css" rel="stylesheet" type="text/css" /></head>
+<body text="#000000" background="#FFFFFF">
+    <form name="form1" method="post" action="PrintLesson.aspx?lesson=2&amp;classroom=HxvNtrqghxRCdxwCx0etl2x3pqAYKhWu5EuV51NnDJk%3d" id="form1">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTkwNzU2MDEyMmRkEpxK/esTZu0SmFx2hxu+4ZoBoGo=" />
+</div>
+
+    <div>
+        <br />
+        <p>
+            <b>
+                Introduction to Ruby Programming: Lesson 2
+            </b>(printer-friendly version)
+            <br />
+            Your Instructor:
+            Richard Blum
+        </p>
+        <p>
+            <u>INSTRUCTIONS: </u>
+        </p>
+        <ul>
+            <li>To <b>print </b>this page, wait for the page to fully load. Once the document is
+                ready to print, simply click your browser's <b><i>File </i></b>menu and choose <b><i>
+                    Print </i></b>. </li>
+            <li>To <b>save </b>this page, click your browser's <b><i>File </i></b>menu and choose
+                <b><i>Save As</i></b>. Select a disk drive and folder to receive the file, and change
+                the name of the file to <b>less02.htm</b>.
+                To view the file while you are offline, just go to the drive and folder you selected
+                when you saved the file and double-click the file named <b>less02.htm</b>. Your browser will start and you will have access
+                to the file. </li>
+        </ul>
+        <hr />
+        
+                <br />
+                <br />
+                <br />
+                <b>
+                    Chapter 1
+                </b>
+                <br />
+                <p>
+<!-- rby LESSON 02 CHAPTER 1 -->
+<!-- START CHAPTER CONTENT -->
+
+<strong>Introduction</strong></p><p>Welcome back! I hope you were able to get your Ruby on Rails environment up and running and that you're ready to start doing some programming. Before we can begin working on the course project, we'll need to cover some of the nuts and bolts of how the Ruby programming language works. So today we'll start looking at the basics of Ruby coding.</p><p>To ease into things, first we'll take a look at how Ruby handles data. You'll learn about Ruby's data classification types and how to work with them. We'll walk through how to store and manipulate data in Ruby programs and how to use some of the built-in functions Ruby provides for us. Data is crucial to any programming application, and understanding how Ruby processes data will make it much easier to complete our course project, the Restaurant Review site.</p><p>Okay, now that you know what's ahead, let's get started!
+            
+                <br />
+            
+                <br />
+                <br />
+                <br />
+                <b>
+                    Chapter 2
+                </b>
+                <br />
+                <p>
+<!-- rby LESSON 02 CHAPTER 2 -->
+<!-- START CHAPTER CONTENT -->
+
+<link href="https://api.ed2go.com/CourseBuilder/2.0/images/resources/prod/rby-0/rby.css" rel="stylesheet" type="text/css"><strong>Ruby Data Types</strong></p><p>Data is the key to all applications, and there's not a lot you can do on a Web site without it. Before you can start creating a Web application, you need to know what data it will require and how you're going to work with it. In this chapter, we'll explore how Ruby handles data.</p><p><strong>Working With Numbers</strong></p><p>Just about every application uses numbers. Whether you want to calculate complex mathematical equations or keep track of your bowling scores, numbers will often play a crucial part in your Ruby code. We'll be using numbers to identify the postings in our restaurant blog. It helps to use numbers for this, because two records could have the same title. Assigning a unique number will allow us to easily retrieve the correct data record.</p><p>Ruby divides numbers into two categories:</p><p><ul><li>Integer values</li><br>
+<li>Floating-point values</li></ul></p><p>If you've done programming before, this probably doesn't surprise you. If this is your first taste of programming, you might not have realized that there are two types of numbers. Let's take a closer look at these and see what's up.</p><p><strong>Integer Values</strong></p><p>The most basic way of handling numbers is with <em>integer values</em>. The integer value data type consists of only whole numbers, both positive and negative. These values represent numbers that don't have fractions, such as 1 dog, 1,000 people, or -20 degrees.</p><p>We use integer values in all sorts of applications. This data type is commonly used for counting (such as determining how many items are in a database table) and providing an identification number to records (such as an employee ID).</p><p>The Ruby integer data type does have one oddity that you should be aware of. In the written English language, large numbers are sometimes separated using commas, such as 10,236,431. This helps you to process the number in your mind easily. </p><p>In Ruby, you can't use commas in an integer value. In most mathematical operations, you just use the number without commas: 10236431. However, Ruby does allow you to use underscores instead of commas: 10_236_431. This format may look odd, but it can come in handy when dealing with really big numbers.</p><p>Unlike some other programming languages, Ruby puts no practical limit on number sizes. Ruby supports integer values using two methods. The <em>fixnum</em> method directly assigns the integer value to memory in binary form. These values can be as large as your operating system allows (2<sup>^30</sup> for 32-bit operating systems, and 2<sup>^62</sup> for 64-bit operating systems).</p><p>However, Ruby doesn't stop there. It also provides the <em>bignum</em> method, which can use multiple fixnums to store a larger integer value automatically, with no action required on your part! The bignum method can operate with extremely large numbers with ease!</p><p><strong>Floating-Point Values</strong></p><p>In contrast to integer values, <em>floating-point values</em> can represent any type of number, positive or negative, whole or fraction. You can't easily work with fractions in programming code, so Ruby uses <em>decimal notation</em> to represent fractions.</p><p>Decimal notation uses a decimal point to separate the whole-number portion of a value from the fraction portion. Thus, to represent 4 1/2, you would use 4.5, with the 5 representing 5 tenths, which is one half.</p><p>The floating-point data type provides for a wide assortment of numerical values, such as:</p><p><ul><li>1.25</li><br>
+<li>0.12345</li><br>
+<li>-48.344</li><br>
+<li>3.245e2</li></ul></p><p>You may notice something odd about the last example. This format is called <em>scientific notation</em>. If you're a math geek, you probably know just what this does. If not, the <em>e</em> represents the exponent, or multiplier. Don't confuse this with the mathematical constant <em>e</em> (in fact, you can also use E for the exponent symbol to avoid confusion).</p><p>The scientific notation multiplies the coefficient (the first number) by 10 raised to the exponent value. If you remember back to your early math classes (which were quite a while ago for some of us), multiplying by 10 just means moving the decimal point to the right.</p><p>So after all of that, the floating-point value 3.24e2 is just a fancy way of writing 3.24 times 100, which is 324.5!</p><p><strong>Using Math</strong></p><p>Ruby provides special symbols to allow you to perform arithmetic. It supports all of the basic mathematical operations, although you may not recognize some of the symbols it uses.</p><p><table width="100%" border="0" cellpadding="7" cellspacing="1" bgcolor="#F0EDF8"> <tr bordercolor="#F0EDF8"> <td height="0" colspan="2" bgcolor="#F0EDF8"><font size="2" face="Arial, Helvetica, sans-serif"><strong>Ruby Mathematical Symbols</strong></font></td> </tr> <tr bordercolor="#F0EDF8"> <td width="6%" height="0" bgcolor="#f9f8fC"><font size="2" face="Arial, Helvetica, sans-serif"><strong>Symbol</strong></font></td> <td width="94%" height="0" bgcolor="#f9f8fC"><font color="#333333" size="2" face="Arial, Helvetica, sans-serif"><strong>Operation</strong></font></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">+</td> <td bgcolor="#FFFFFF"><font size="2" face="Arial, Helvetica, sans-serif">Addition</font></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">-</td> <td bgcolor="#FFFFFF"><font size="2" face="Arial, Helvetica, sans-serif">Subtraction</font></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">*</td> <td bgcolor="#FFFFFF"><font size="2" face="Arial, Helvetica, sans-serif">Multiplication</font></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">/ </td> <td bgcolor="#FFFFFF"><font size="2" face="Arial, Helvetica, sans-serif">Division</font></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">%</td> <td bgcolor="#FFFFFF"><font size="2" face="Arial, Helvetica, sans-serif">Modulo (remainder)</font></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">**</td> <td bgcolor="#FFFFFF"><font size="2" face="Arial, Helvetica, sans-serif">Exponent</font></td> </tr> </table> </p><p>When completing mathematical operations with integer values, it's important to remember that the result will always be another integer value. Thus, if you try the operation 5 / 3, you'll get an answer of 1. You must use the <em>modulo</em> symbol to determine if there is a remainder. For example, the answer to 5 % 3 is 2 (2 is the remainder when you divide 5 by 3).</p><p>With floating-point arithmetic, the answer will always be a floating-point value. For example, performing the operation 1.0 + 2.0 will result in the answer 3.0.</p><p><strong>Strings</strong></p><p>So far, you've seen how to deal with numbers, but numbers aren't the only data element used in programs. Somehow you need to be able to store and manipulate words. That's where <em>strings</em> come in.</p><p>Strings in Ruby, unlike the ones you see in an orchestra, are values that contain text. A string usually contains printable characters, but it doesn't have to. It can also contain nonprintable control characters, such as tabs and return characters.</p><p>You create strings using <em>literals</em>. A literal is a sequence of characters. However, you need to let Ruby know where the sequence of characters begins and ends. You do this using string <em>delimiters</em>.</p><p>There are two basic types of delimiters: the single quote and the double quote. You can use these basic characters to indicate the beginning and end of the string:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">&quot;This is a sample string&quot;
+'This is another sample string'</font></pre></div></p><p>But what do you do when you have to use a single or double quote inside a string value? The simple solution is to use the opposite quote to delineate the string:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">&quot;This isn't a problem in Ruby&quot;
+'Rich said, &quot;This will work.&quot;'</font></pre></div></p><p>However, there are times when you can't avoid using the same quote within the string. In these situations, you can use the backslash character to indicate that the quote is part of the string, not the delimiter:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">'This isn\'t a problem'
+&quot;I replied, \&quot;Rich said, ‘This'll work, too.' And he was right.\&quot; &quot;</font></pre></div></p><p>One confusing feature of strings is that they can contain numbers. For example, you can have the string:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">&quot;12345&quot;</font></pre></div></p><p>While this string contains only numbers, you can't use it in a mathematical operation. Ruby handles strings differently from integers and floating-point numbers. There is no numerical value to the string; it's just a group of characters.</p><p>That covers the basic data types you'll run across in Ruby. In the next chapter, we'll look at how to store them in your programs.
+            
+                <br />
+            
+                <br />
+                <br />
+                <br />
+                <b>
+                    Chapter 3
+                </b>
+                <br />
+                <p>
+<!-- rby LESSON 02 CHAPTER 3 -->
+<!-- START CHAPTER CONTENT -->
+
+<link href="https://api.ed2go.com/CourseBuilder/2.0/images/resources/prod/rby-0/rby.css" rel="stylesheet" type="text/css"> <strong>Using Variables</strong></p><p>Trying to write a program using just the Ruby data types can be tricky, if not impossible. Once you calculate an answer from one equation, you often need to use it later in another equation. It's helpful to have the ability to store this information in your program. Ruby provides this feature by using <em>variables</em>.</p><p>Variables are words that represent a location in memory where Ruby stores a value. You can then reference the word anywhere else in your Ruby program to recall the value you originally placed there. You can also replace the value in the variable. Ruby just places the new value in the memory location and discards the original one.</p><p>In our Restaurant Review project, we'll use variables to pass data between our Ruby programs and our Web pages and to retrieve information from the database. Variables are a necessity in any program, including Ruby programs.<br>
+ <br>
+A variable in Ruby can be any combination of letters and numbers, but it must start with a lowercase letter. To place a value in a variable, you use an <em>expression</em>. An expression assigns a result or a value to a variable. Here are some examples of simple Ruby expressions:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">test1 = 3
+test2 = 45.36
+testString = &quot;This is a test string&quot;
+result = test1 + test2</font></pre></div></p><p>The first expression assigns the integer value 3 to the variable named <em>test1</em>. The second expression does the same thing, but with a floating-point value. The third expression assigns a string value to the variable. The last expression performs a mathematical operation and assigns the result to the variable <em>result</em>.</p><p><strong>Variables in Action</strong></p><p>It's hard to demonstrate variables in Ruby without seeing them in action. Let's fire up a Ruby interpreter and start playing with variables. </p><p>We can do that using the Interactive Ruby program (called IRB). First, we need to get to a Command Prompt window (or Terminal window if you're using Mac or Linux) that supports our Ruby environment. For the InstantRails package, here are the steps for doing that:</p><p><ol><li>Start the Windows Explorer program on your PC.</li><p><p><li>Double-click the folders until you reach the folder where you installed the InstantRails program (in the Lesson 1 example, I recommended c:\rails).</li></p><p><li>Double-click the <strong>InstantRails.exe</strong> file.</li></ol></p><p>You should now see the InstantRails control window.</p><p><p align="center"><img src="https://api.ed2go.com/CourseBuilder/2.0/images/resources/prod/rby-0/L02-01.jpg" border="0" alt="The InstantRails control window "><br><br>
+<font size="1">The InstantRails control window </font></p></p><p>The InstantRails control window allows you to start a Command Prompt session configured to support the Ruby programming environment. To start that, just follow these steps:</p><p><ol><li>Click the <strong>I</strong> icon at the top-left corner of the InstantRails control window.</li><p><p><li>Move your mouse pointer down to <strong>Rails Applications</strong>. A new submenu should appear.</li></p><p><li>On the submenu, select <strong>Open Ruby Console Window</strong>.</li></ol></p><p>You should get a command prompt that looks like this:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">c:\rails\rails_apps&gt;</font></pre></div></p><p>You're now ready to use the IRB program. Type the command <em>irb</em> at the command prompt, and hit the ENTER key. You should see:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">C:\rails\rails_apps&gt;irb
+irb(main):001:0&gt;</font></pre></div></p><p>The IRB program prompt appears, waiting for you to enter some Ruby statements. It shows the line number in the IRB session (001), along with the code program being executed (main). Let's begin by assigning some values to variables. Follow along with this example in your IRB session:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">irb(main):001:0&gt; test1 = 3
+=&gt; 3
+irb(main):002:0&gt; test2 = 45.36
+=&gt; 45.36
+irb(main):003:0&gt; test3 = test1 + test2
+=&gt; 48.36
+irb(main):004:0&gt;</font></pre></div></p><p>The IRB program displays the result of each statement as you type it on the line. It places the =&gt; symbol on the line to indicate that the result is an internal value that Ruby processes from the statement. It's not what you would see in the program output.</p><p>To display a value from Ruby, use the <em>puts</em> command. The puts command displays the result of an assignment or the value of a variable. Type this command in your IRB session:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">irb(main):004:0&gt; puts test3
+48.36
+=&gt; nil
+irb(main):005:0&gt;</font></pre></div></p><p>IRB first shows the output of the puts command&#8212;the current value stored in the test3 variable. It then displays the result of the puts command, using the =&gt; symbol.</p><p>The result of the puts command is a special value called <em>nil</em>. The nil value represents no value, which is different from a zero value (zero can be a numerical value). You'll see how to use the nil value later on when determining if a statement succeeds or not.</p><p>Notice that the test3 value retained the result from the mathematical operation (the 48.36 value). You can now use the test3 variable anywhere else in Ruby to represent that value. To see this in action, enter this code at your IRB prompt:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">irb(main):005:0&gt; result = test3 / 2
+=&gt; 24.18
+irb(main):006:0&gt; puts result
+24.18
+=&gt; nil
+irb(main):007:0&gt;</font></pre></div></p><p>Another important feature that you can see from this example is that variables retain the data type assigned to them. Since the value in the test3 variable is a floating-point value, the output from the result variable is also a floating-point value.</p><p>That's enough on the basics of data types and variables. Follow me to Chapter 4, and let's start writing some Ruby code!
+            
+                <br />
+            
+                <br />
+                <br />
+                <br />
+                <b>
+                    Chapter 4
+                </b>
+                <br />
+                <p>
+<!-- rby LESSON 02 CHAPTER 4 -->
+<!-- START CHAPTER CONTENT -->
+
+<link href="https://api.ed2go.com/CourseBuilder/2.0/images/resources/prod/rby-0/rby.css" rel="stylesheet" type="text/css"><strong>Creating a Ruby Program</strong></p><p>Using IRB to assign values to variables and see the results is fine, but it's not all that practical. The last thing you'll want to do is enter a 1,000-line program by hand every time you want to run it.</p><p>Instead, Ruby provides a method for us to store our programs in files and then run them through the Ruby interpreter. The Ruby interpreter program is simply called <em>ruby</em>. It processes Ruby code files and displays any output on the command prompt. </p><p>Let's create a simple Ruby program in a file and run it through the Ruby interpreter. Just follow these steps:</p><p><ol><li>Open the InstantRails program as described earlier in Chapter 3, and then open the Ruby Console window.</li><p><p><li>Create a working folder in the rails_apps folder by typing the command:</li></p><p><em>mkdir lesson2</em></p><p><li>Change to the new working folder by typing the command:</li></p><p><em>cd lesson2</em></p><p><li>Open Notepad with a new file called first.rb using the command:</li></p><p><em>notepad first.rb</em></p><p><li>Enter the following code into the empty Notepad session:</li><br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">test1 = 10.25
+test2 = 5.2
+result1 = test1 * test2
+puts result1</font></pre></div></p><p><li>Save the file, and then exit Notepad.</li></ol></p><p><table width="370" border="1" align="center" cellpadding="10" cellspacing="0" bordercolor="#CCCCCC" bgcolor="#F4F4E8"><tr> <td><p align="left"><font size="2"><img src="https://api.ed2go.com/CourseBuilder/2.0/images/resources/prod/rby-0/caution_trans.png" alt="Warning" width="60" height="60" hspace="0" vspace="5" border="0" align="right"><strong><font face="Arial, Helvetica, sans-serif">Warning:</font></strong><font face="Arial, Helvetica, sans-serif"> If you open Notepad to write your code without specifying a filename and then use the Save As feature to save it, be careful. By default, Notepad places a .txt extension on the end of the file when you save it. To prevent that, you can enclose the filename in double quotes in the Save As text box, like this: "first.rb". This will ensure that Notepad doesn't apply the .txt file extension. </font></font></p></td> </tr></table></p><p>You can now run your Ruby program at the Ruby Console window by using the command:</p><p><em>ruby first.rb</em></p><p>Here's what this should look like:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">c:\rails\rails_apps\lesson2&gt; ruby first.rb
+53.3<p><p>c:\rails\rails_apps\lesson2&gt;</font></pre></div></p><p>Congratulations, your first Ruby program! Not too exciting, but it did produce our output (and it was even the correct result)!</p><p><strong>Debugging Code</strong></p><p>Usually programs aren't as simple as the one we just played with. While I'm sure you're an impeccable typist and an even better programmer, at some point you'll probably experience an error in your Ruby code. Fortunately, the Ruby interpreter can help us out.</p><p>If there's an error in your code, the Ruby interpreter will point it out and attempt to tell you just what the error is. Let's give this a try:</p><p><ol><li>Open your first.rb code program in Notepad</li><p><p><li>Change the last line to read:</li><br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">puts result</font></pre></div></p><p><li>Save the file, and exit Notepad.</li></ol></p><p>Now run the new file from the command prompt. Your output should look like this:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">C:\rails\rails_apps\lesson2&gt;ruby first.rb
+first.rb:4: undefined local variable or method `result' for main:Object (NameErr
+or)<p><p>C:\rails\rails_apps\lesson2&gt;</font></pre></div></p><p>The Ruby interpreter produced an error message telling you exactly what file and line the error was found in and what the error is. This can be invaluable in a 1,000-line application.</p><p><strong>Using the SciTE Text Editor</strong></p><p>Notepad isn't exactly the most advanced editor to use for writing Ruby code. For one thing, it doesn't provide line numbers, so you have no way of knowing what line of code a particular statement is on when you're debugging. It also lacks some of the basic features provided by fancy code editors, such as recognizing Ruby code syntax. So it can't warn you ahead of time if there's an issue with your code.</p><p>There are lots of Ruby editors available; some are free, and some are not-so-free. The InstantRails project includes a free code editor that may save you some work (and money).</p><p>The Scintilla project is an Open Source project that provides a fancy code-editing component. Scintilla isn't an editor by itself, but it provides the underlying logic for a code editor, giving us SciTE. While the SciTE text editor can't run application code, it does support editing many different programming languages, including Ruby.</p><p><p align="center"><img src="https://api.ed2go.com/CourseBuilder/2.0/images/resources/prod/rby-0/L02-02.jpg" border="0" alt="The SciTE text editor "><br><br>
+<font size="1">The SciTE text editor </font></p></p><p>The SciTE text editor uses <em>syntax highlighting</em>. This feature uses different colors to highlight keywords, such as Ruby statements and variable names. If you open a code block area, such as a quote delimiter, it'll highlight the item in red so you know instantly if you're missing a quote, instead of having to wait for the error message to appear when you try to run your code. This can be a great time-saver in development work.</p><p>The InstantRails application includes SciTE, but it's not obvious how to access it. By default, the editor is located in the ruby/scite folder in the InstantRails installation layout. The name of the executable file is <em>scite.exe</em>.</p><p>To use SciTE to edit your Ruby code files automatically, you can associate it with the .rb file extension in Windows Explorer. To do that, just follow these steps:</p><p><ol><li>Start Windows Explorer, and find your first.rb file.</li><p><p><li>Right-click the first.rb file, and select <strong>Open</strong> from the menu.</li></p><p><li>Select the radio button for the <strong>Select the program from as list</strong> option, and click <strong>OK</strong>.</li></p><p><li>Click the <strong>Browse</strong> button, and then find the sciTE.exe program in your InstantRails installation folder (under the ruby/scite folder).</li></p><p><li>Check the box to always use this program to open this kind of file, and click the <strong>OK</strong> button.</li></ol></p><p>Now when you look at your Ruby programs in Windows Explorer, all you need to do is double-click them to start the SciTE editor with the program inside!</p><p>That's enough work for today. Continue on to Chapter 5, and we'll wrap up today's lesson.
+            
+                <br />
+            
+                <br />
+                <br />
+                <br />
+                <b>
+                    Chapter 5
+                </b>
+                <br />
+                <p>
+<!-- rby LESSON 02 CHAPTER 5 -->
+<!-- START CHAPTER CONTENT -->
+
+<strong>Summary</strong></p><p>Today we looked at how Ruby deals with the basic types of data found in our applications. You saw how Ruby uses two different methods for handling numbers. Integer values contain positive and negative whole numbers. These data values are useful for keeping counters and for identifying objects with a unique ID, such as employee IDs.</p><p>The floating-point data type incorporates a wide range of numbers by including fractional values. The decimal notation system allows you to specify a fraction to any required decimal place. Ruby also allows you to use scientific notation to represent extremely large or extremely small values.</p><p>The string data type provides a method for storing and processing text. You can define string literals using delimiters. A delimiter can be either a single or double quote. You can use the delimiter character inside the string, but you must precede it with a backslash character to identify it as data instead of the delimiter.</p><p>Ruby uses variables to store data values in memory while processing a program. Ruby variables can be any length word starting with a lowercase letter and containing both letters and numbers. Once you store a value in a variable, you can retrieve it at any time later in your program, and it'll have the same value (unless, of course, you change the value yourself).</p><p>You can use the Interactive Ruby program (IRB) to quickly process Ruby statements in real-time. This allows you to quickly test short code segments without having to write a program.</p><p>However, any Ruby statements you enter in the IRB program disappear when you exit. To write a program of any significant length, you'll want to use the Ruby interpreter (ruby). The ruby program allows you to store your code in a file and then process it as many times as you want (or need).</p><p>To create your Ruby code file, you'll want to use a text editor. The Notepad editor is adequate to work with, but it doesn't provide many advanced features. The InstantRails package includes a free Ruby text editor called SciTE. The SciTE editor provides some features, such as syntax highlighting and line numbering, which make your life as a Ruby programmer much easier.</p><p>In the next lesson, we'll continue our tour of the Ruby programming language. We'll learn how to use Ruby code to manipulate our data and to perform logic to alter the flow of our programs. Until then, don't forget this lesson's quiz and assignment.</p><p>See you in Lesson 3!
+            
+        
+                <br />
+                <br />
+                <br />
+                <b>Supplementary Material </b>
+                <br />
+                <center>
+                    <table border="0" cellpadding="0" cellspacing="0" width="400">
+                        <tbody>
+            
+                <tr bgcolor="#ffffff">
+                    <td align="left">
+                        <br>
+                        <a href="http://scintilla.sourceforge.net/SciTE.html" target="_blank">
+                            Scintilla and SciTE
+        </a>
+                        <br>
+                        http://scintilla.sourceforge.net/SciTE.html
+                    </td>
+                </tr>
+                <tr bgcolor="#f4f4e8">
+                    <td align="left">
+                        These are the Web pages for the Scintilla code-editing component and the SciTE text editor. Here you can download the official documentation to familiarize yourself with all of the fancy features available in this editor.
+        
+                    </td>
+                </tr>
+            
+                </tbody> </table> </center>
+            
+        <div id="pnlFaqs">
+	
+            <br />
+            <br />
+            <br />
+            <br />
+            <b>FAQs </b>
+            <br />
+            <br />
+            <strong>Q:</strong> Can I use the SciTE text editor to edit my HTML files?<br /><br /><strong>A:</strong> Absolutely! The SciTE editor recognizes HTML code tags, and it is a great resource to use for editing your HTML files. It's not a full Integrated Development Environment (IDE) like Dreamweaver or FrontPage, but if you're just using a plain text editor to crank out your HTML code, it's a huge improvement!
+        
+</div>
+        <div id="pnlAssignments">
+	
+            <br />
+            <br />
+            <br />
+            <br />
+            <b>Assignment </b>
+            <br />
+            <br />
+            <br />For today, work on getting used to the Ruby programming environment. Use the SciTE editor to create a few sample programs, assigning values to variables, creating some calculations, and using the puts statement to display your results, just as we did in the lesson.<br /><br />Try picking out some mathematical equations to implement, such as finding the circumference of a circle, the mileage your car gets, or your cell phone rate (you might need advanced calculus for that!). Make sure you use variables in your equations so you can easily change the values to calculate different results.
+            <br />
+            <br />
+            <br />
+        
+</div>
+        <table align="center" width="600">
+            <tbody>
+                <tr>
+                    <td>
+                        <p align="center">
+                            Copyright © 1997 -
+                            2010
+                            Education To Go. All rights reserved. The material on this site cannot be reproduced
+                            or redistributed unless you have obtained prior written permission from Education
+                            To Go. Education To Go and ed2go are registered trademarks of Education To Go, a
+                            part of Cengage Learning.
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </form>
+</body>
+</html>

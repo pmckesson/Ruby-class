@@ -1,0 +1,437 @@
+
+<html>
+<head><meta http-equiv="CACHE-CONTROL" content="NO-CACHE" /><meta http-equiv="PRAGMA" content="NO-CACHE" /><meta http-equiv="Expires" content="-1" /><title>
+	Introduction to Ruby Programming: Lesson 3
+</title><link href="./Stylesheets/classroom.css" rel="stylesheet" type="text/css" />
+
+    <script src="./Includes/classroom.js" language="javascript" type="text/javascript"></script>
+
+    <style type="text/css">
+        BODY
+        {
+            font-size: small;
+        }
+    </style>
+<link href="https://api.ed2go.com/CourseBuilder/2.0/images/resources/prod/global.css" rel="stylesheet" type="text/css" /><link href="https://api.ed2go.com/CourseBuilder/2.0/images/resources/prod/rby-0/course.css" rel="stylesheet" type="text/css" /></head>
+<body text="#000000" background="#FFFFFF">
+    <form name="form1" method="post" action="PrintLesson.aspx?lesson=3&amp;classroom=HxvNtrqghxRCdxwCx0etl2x3pqAYKhWu5EuV51NnDJk%3d" id="form1">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTkwNzU2MDEyMmRkEpxK/esTZu0SmFx2hxu+4ZoBoGo=" />
+</div>
+
+    <div>
+        <br />
+        <p>
+            <b>
+                Introduction to Ruby Programming: Lesson 3
+            </b>(printer-friendly version)
+            <br />
+            Your Instructor:
+            Richard Blum
+        </p>
+        <p>
+            <u>INSTRUCTIONS: </u>
+        </p>
+        <ul>
+            <li>To <b>print </b>this page, wait for the page to fully load. Once the document is
+                ready to print, simply click your browser's <b><i>File </i></b>menu and choose <b><i>
+                    Print </i></b>. </li>
+            <li>To <b>save </b>this page, click your browser's <b><i>File </i></b>menu and choose
+                <b><i>Save As</i></b>. Select a disk drive and folder to receive the file, and change
+                the name of the file to <b>less03.htm</b>.
+                To view the file while you are offline, just go to the drive and folder you selected
+                when you saved the file and double-click the file named <b>less03.htm</b>. Your browser will start and you will have access
+                to the file. </li>
+        </ul>
+        <hr />
+        
+                <br />
+                <br />
+                <br />
+                <b>
+                    Chapter 1
+                </b>
+                <br />
+                <p>
+<!-- rby LESSON 03 CHAPTER 1 -->
+<!-- START CHAPTER CONTENT -->
+
+<strong>Introduction</strong></p><p>Hello! I'm glad you're back! I hope you enjoyed working with Ruby code in the last assignment. Today we'll learn new ways to use it and make more exciting programs.</p><p>In this lesson, we'll look at three features that are crucial to the operation of just about every Ruby program we'll create. First, we'll look at structured commands, which allow you to alter the flow of a program based on values within the data (such as a variable). Following that, we'll discuss using loops in Ruby. Loops are a common way to process multiple data items with a minimum amount of code. (I'm all for that!) Finally, we'll see how Ruby can use arrays to hold multiple values of similar data and explore how iterators extract values from the arrays.</p><p>That should keep us busy! Let's move on to Chapter 2 and start working with structured commands.
+            
+                <br />
+            
+                <br />
+                <br />
+                <br />
+                <b>
+                    Chapter 2
+                </b>
+                <br />
+                <p>
+<!-- rby LESSON 03 CHAPTER 2 -->
+<!-- START CHAPTER CONTENT -->
+
+<link href="https://api.ed2go.com/CourseBuilder/2.0/images/resources/prod/rby-0/rby.css" rel="stylesheet" type="text/css"> <strong>Structured Commands</strong></p><p>So far in your Ruby programming, you've learned how to use variables&#8212;along with integer values, floating-point values, and string values&#8212;to process simple data equations. These elements work well for programs that perform the same steps or algorithms, no matter what the data is.</p><p>However, sometimes programs must perform different tasks depending on the value of particular data elements. You'll see this in action in our Restaurant Review project. We'll evaluate the outcome of various functions and display either the result or an error message if the function fails. This is where <em>structured commands</em> come in.</p><p>Structured commands allow you to alter the flow of your program depending on a specific data value, called a <em>condition</em>. A condition is an expression that results in either <em>true</em> or <em>false</em> as the answer. Ruby can execute different blocks of code depending on the outcome of the condition. This is invaluable for writing dynamic programs that must change the output based on input values.</p><p><strong>The if-then Statement</strong></p><p>The most common structured command you'll see in Ruby programming is the <em>if-then</em> statement. The if-then statement checks the result of a condition and then performs a block of code depending on the value of the result. This feature allows you to control the operation of the program based on real-time data values. </p><p>Here's the basic format of the if-then statement:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">if <em>condition</em>
+   <em>statements to execute</em>
+end</font></pre></div></p><p>If the condition results in a true value, Ruby executes the statements that appear before the <em>end</em> keyword. If the condition results in a false value, Ruby skips the statements and continues with the code immediately after the end keyword. Here's an example of this:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">if num &gt; 5
+   puts &quot;The value is larger than 5&quot;
+end</font></pre></div></p><p>If we ran this code, we'd see that "The value is larger than 5" appears only if the variable <em>num</em> contains a value of 6 or greater. If the value is 5 or less, Ruby doesn't execute the puts statement.</p><p><strong>Comparing Data Types</strong></p><p>The condition is the core of the if-then statement. You can use conditions to compare just about any data type and value. However, Ruby does have specific rules for comparing data types.</p><p>Ruby uses the following symbols, called <em>comparators</em>, to compare two values in a condition:</p><p><table width="100%" border="0" cellpadding="7" cellspacing="1" bgcolor="#F0EDF8"> <tr bordercolor="#F0EDF8"> <td height="0" colspan="2" bgcolor="#F0EDF8"><font size="2" face="Arial, Helvetica, sans-serif"><strong>Ruby Comparator Symbols</strong></font></td> </tr> <tr bordercolor="#F0EDF8"> <td width="11%" height="0" bgcolor="#f9f8fC"><font size="2" face="Arial, Helvetica, sans-serif"><strong>Comparator Symbol</strong></font></td> <td width="89%" height="0" bgcolor="#f9f8fC"><font color="#333333" size="2" face="Arial, Helvetica, sans-serif"><strong>Description</strong></font></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">== </td> <td bgcolor="#FFFFFF"><font size="2" face="Arial, Helvetica, sans-serif">equals</font></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">!=</td> <td bgcolor="#FFFFFF"><font size="2" face="Arial, Helvetica, sans-serif">not equal</font></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">&lt;</td> <td bgcolor="#FFFFFF"><font size="2" face="Arial, Helvetica, sans-serif">less than</font></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">&gt;</td> <td bgcolor="#FFFFFF"><font size="2" face="Arial, Helvetica, sans-serif">greater than</font></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">&lt;=</td> <td bgcolor="#FFFFFF"><font size="2" face="Arial, Helvetica, sans-serif">less than or equal (remainder)</font></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF">&gt;=</td> <td bgcolor="#FFFFFF"><font size="2" face="Arial, Helvetica, sans-serif">greater than or equal</font></td> </tr> </table></p><p>Even without running it, you can probably figure out what result you'd get from this code: <br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">value1 = 50
+value2 = 100
+if value2 &gt; value1
+   puts &quot;The value is larger&quot;
+end</font></pre></div></p><p>In the example above, both values in the condition are numerical. Here's an example of code that uses a condition to compare text values:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">value1 = "testing"
+if value1 == &quot;testing&quot;
+   puts &quot;This is only a test&quot;
+end</font></pre></div></p><p>This feature allows you to easily compare string values in your programs. What gets tricky is when you use the greater-than and less-than comparators with strings. How do you know if the word <em>banana</em> is less than or greater than the word <em>orange</em>? Ruby uses the alphabetical order of text characters to perform the comparison&#8212;a is 1, b is 2, and so on through the alphabet. So, for example, the word <em>banana</em> is less than the word <em>orange</em>.</p><p><table width="370" border="1" align="center" cellpadding="10" cellspacing="0" bordercolor="#CCCCCC" bgcolor="#F4F4E8"><tr> <td><p align="left"><font size="2"><img src="https://api.ed2go.com/CourseBuilder/2.0/images/resources/prod/rby-0/caution_trans.png" alt="Warning" width="60" height="60" hspace="0" vspace="5" border="0" align="right"><strong><font face="Arial, Helvetica, sans-serif">Warning:</font></strong><font face="Arial, Helvetica, sans-serif"> Be careful when using the == comparison symbol. If you use the single equals sign instead, Ruby will assign the values instead of comparing them. This is often a stumbling block for novice programmers. </font></font></p></td> </tr></table></p><p><strong>The if-then-else Statement</strong></p><p>Often times you'll need to execute one set of statements when a condition is true and another set of statements if it's false. The <em>else</em> keyword is used to provide an alternate set of statements for Ruby to execute, like this:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">if <em>condition</em>
+   <em>statements to execute if true</em>
+else
+   <em>statements to execute if false</em>
+end</font></pre></div></p><p>In this format, if the condition is true, Ruby executes only the code between the if statement and the else keyword. You can put more than one statement in each section of the if-then-else code. <br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">if price &gt; 100
+   price = price * .90
+   puts "The new price is " + price.to_s
+else
+   price = price * .95
+   puts &quot;The new price is &quot; + price.to_s
+end</font></pre></div></p><p>This example demonstrates checking to see if the price variable value is larger than 100. If the price is larger than 100, the price is changed to discount it by 10% (by multiplying by .90), and the result is displayed on the monitor (you need to use the .to_s method to convert the integer value into a string value to display it). If the price isn't greater than 100, the else block of code implements a 5% discount and then displays the new price.</p><p>Conditions allow us to check whether a number is a specific value or range of values, or whether a string is equal to specific text. The next section demonstrates additional helpful conditions to use in Ruby.</p><p><strong>The elsif Keyword</strong></p><p>You can expand on the functionality of the if-then statement by stringing if-then statements together using the <em>elsif</em> keyword:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">value = rand(100)
+if value &gt; 50
+  puts &quot;The value is big: &quot; + value.to_s
+elsif value &gt; 25
+  puts &quot;The value is medium: &quot; + value.to_s
+else
+  puts &quot;The value is small: &quot; + value.to_s
+end</font></pre></div></p><p>That's quite a string of options! Often it's hard to follow along in the elsif statement string. Let's create an example using this code and walk through it:</p><p><ol><li>Create a new folder in the InstantRails rails_apps folder called <em>lesson3</em>.</li><p><p><li>Right-click in the lesson3 folder, and select <strong>New</strong> > <strong>Text Document</strong>.</li></p><p><li>Rename the new document <em>iftest.rb</em>.</li></p><p><li>Double-click the iftest.rb file to open it in the SciTE editor.</li></p><p><li>Enter the if-then-elsif code shown above, and save the file.</li></p><p><li>Start the InstantRails application, click the <strong>I</strong> button, and select <strong>Rails Applications</strong> > <strong>Open Ruby Console Window</strong>.</li></p><p><li>Change to the lesson3 folder using the command:<p><p><div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">cd lesson3</font></pre></div></li></p><p><li>Run the new code using the ruby command:<p><p><div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">ruby iftest.rb</font></pre></div></li></ol></p><p>The <em>rand()</em> function picks a random number from 0 to 100 and assigns it to the variable called <em>value</em> in our code example. Ruby walks through the if-then conditions and displays the appropriate message based on the value of the random number.</p><p><p align="center"><img src="https://api.ed2go.com/CourseBuilder/2.0/images/resources/prod/rby-0/L03-01.jpg" border="0" alt="Running the iftest.rb program "><br><br>
+<font size="1">Running the iftest.rb program</font></p></p><p>Let's move on to Chapter 3 and talk about another type of structured command: looping.
+            
+                <br />
+            
+                <br />
+                <br />
+                <br />
+                <b>
+                    Chapter 3
+                </b>
+                <br />
+                <p>
+<!-- rby LESSON 03 CHAPTER 3 -->
+<!-- START CHAPTER CONTENT -->
+
+<link href="https://api.ed2go.com/CourseBuilder/2.0/images/resources/prod/rby-0/rby.css" rel="stylesheet" type="text/css"> <strong>Loops</strong></p><p>In addition to structured commands, <em>loops</em> are a popular way to alter the flow of a program. Loops do what the name implies&#8212;they loop through a block of code for a predetermined number of times. This is a handy feature if you're trying to loop through an equation a set number of times, such as in a counter.</p><p>Ruby has a unique way of implementing simple loops, called the <em>times</em> method. The times method can be used on both variables and constant numerical values. Here's an example:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">5.times do
+   <em>statements to execute</em>
+end</font></pre></div></p><p>If you're familiar with other programming languages, this may seem somewhat odd. But it's simple in Ruby&#8212;the block of statements will repeat five times, just as the code says!</p><p>If you need to increment or decrement a variable value inside a loop, you have to manually create it and process it inside the loop. Try this example:</p><p><ol><li>Right-click in the lesson3 folder, and select <strong>New</strong> > <strong>Text Document</strong>.</li><p><p><li>Rename the new document <em>looptest.rb</em>.</li></p><p><li>Double-click the looptest.rb file to open it in the SciTE editor.</li></p><p><li>Enter the following code:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">counter = 1
+5.times do
+   puts &quot;This is loop number &quot; + counter.to_s
+   counter = counter + 1
+end
+puts "This is the end of the loop"</font></pre></div></li></p><p><li>Save the file, and run it from the InstantRails Ruby Console Window using the ruby command.</li></ol></p><p>You should see the output showing the five lines created from inside the loop block of code. Notice that in each loop iteration the counter value is different.</p><p><p align="center"><img src="https://api.ed2go.com/CourseBuilder/2.0/images/resources/prod/rby-0/L03-02.jpg" border="0" alt="The output of the looptest.rb program "><br><br>
+<font size="1">The output of the looptest.rb program </font></p></p><p>You can also use variables for the times loop:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">value = 10
+counter = 1
+value.times do
+   puts &quot;This is loop number &quot; + counter.to_s
+   counter = counter + 1
+end</font></pre></div></p><p>Now you can create dynamic loops and control them within your program code. This is an invaluable tool to have at your disposal!</p><p><strong>While Loops</strong></p><p>Times loops are perfect when you must repeat a block of code multiple times. Other times, you may not want to repeat the block of code at all, or you won't know exactly how many times to repeat it. You'll encounter that in the Restaurant Review code when we loop through the results from database queries. Usually you won't know how many records the query will return, so you need some way of stopping the loop when you run out of records.</p><p>For these situations, you'll need the <em>while</em> loop. The while loop allows you to specify a condition that controls the looping. Instead of using a preset numerical value, you can define a condition that Ruby tests before each loop iteration. If the condition results in a true value, Ruby executes the code in the code block. When the condition results in a false value, Ruby stops the loop.</p><p>Here's the general format of the while loop:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">while <em>condition</em>
+<em>statements to execute</em>
+end</font></pre></div></p><p>The condition used in the while loop is exactly the same format as in the if-then statement. Let's look at an example of using the while loop:</p><p><ol><li>Right-click in the lesson3 folder, and select <strong>New</strong> > <strong>Text Document</strong>.</li><p><p><li>Rename the new document <em>whiletest.rb</em>.</li></p><p><li>Double-click the whiletest.rb file to open it in the SciTE editor.</li></p><p><li>Enter the following code:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">counter = 1
+while counter &lt; 10
+   puts &quot;The value is &quot; + counter.to_s
+   counter = counter + 1
+end
+puts "The while loop is complete"</font></pre></div></li></p><p><li>Save the file, and run it from the InstantRails Ruby Console Window using the ruby command.</li></ol></p><p><p align="center"><img src="https://api.ed2go.com/CourseBuilder/2.0/images/resources/prod/rby-0/L03-03.jpg" border="0" alt="The whiletest.rb program output "><br><br>
+<font size="1">The whiletest.rb program output</font></p></p><p>The key to the while loop is that something inside the loop code block alters the data that's tested in the condition. Without this, you'd wind up with an <em>endless loop</em>. An endless loop is a while loop that never exits; it just keeps going on forever (or until you manually stop it).</p><p><strong>Jumping Out of a While Loop</strong></p><p>There will be times when you'd like to exit prematurely from a while loop, such as when a value gets too large in an equation to continue. Ruby provides the <em>break</em> statement to do this. It looks like this:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">break if <em>condition</em></font></pre></div></p><p>The condition allows you to set an equation that, when true, causes Ruby to exit the while loop, even if the while condition hasn't been met. Let's play with this feature:</p><p><ol><li>Right-click in the lesson3 folder, and select <strong>New</strong> > <strong>Text Document</strong>.</li><p><p><li>Rename the new document <em>whiletest2.rb</em>.</li></p><p><li>Double-click the whiletest2.rb file to open it in the SciTE editor.</li></p><p><li>Enter the following code:</li><br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">counter = 1
+while counter &lt; 10
+   puts &quot;The value is &quot; + counter.to_s
+   counter = counter + 1
+   break if counter == 5
+end
+puts &quot;The while loop is complete&quot;</font></pre></div></p><p><li>Save the file, and run it from the InstantRails Ruby Console Window using the ruby command.</li></ol></p><p>Now, when the counter variable value reaches 5, the break statement kicks in and jumps out of the while loop.</p><p><p align="center"><img src="https://api.ed2go.com/CourseBuilder/2.0/images/resources/prod/rby-0/L03-04.jpg" border="0" alt="Running the whiletest2.rb program "><br><br>
+<font size="1">Running the whiletest2.rb program</font></p></p><p>That's enough about structured commands. In Chapter 4, we'll switch gears and talk about another way to handle data in your Ruby program.
+            
+                <br />
+            
+                <br />
+                <br />
+                <br />
+                <b>
+                    Chapter 4
+                </b>
+                <br />
+                <p>
+<!-- rby LESSON 03 CHAPTER 4 -->
+<!-- START CHAPTER CONTENT -->
+
+<link href="https://api.ed2go.com/CourseBuilder/2.0/images/resources/prod/rby-0/rby.css" rel="stylesheet" type="text/css"><strong>Arrays and Iterators</strong></p><p>You've seen how to use variables in Ruby to store values. Sometimes, though, using separate variables for related values can become cumbersome. Ruby provides <em>arrays</em>, a special type of variable. An array allows you to assign a collection of values to a single variable name. To create an array, enclose the values in square brackets when assigning them to the variable:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">names = &#91;"Rich", "Barbara", "Katie Jane", "Jessica"&#93; </font></pre></div></p><p>There are now four separate values assigned to the names array. I imagine that now you're wondering just how to retrieve these values! You can work with the array data as a whole simply by using the variable name, or you can handle each value individually by using an <em>index</em>. </p><p>You see, each value in an array has an index number, and the index numbers start at 0. So the first data value is always at index 0, the second data value is at index 1, and so on. To understand this, imagine an egg carton containing 12 eggs. Under the leftmost egg in the top row is the number 0. Under the egg just to its right is the number 1, and so on for all the rest of the eggs in the carton.</p><p>Here's an example of how to create a simple array in Ruby:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">irb(main):001:0&gt; names = &#91;"Rich", "Barbara", "Katie Jane", "Jessica"&#93;
+=&gt; &#91;"Rich", "Barbara", "Katie Jane", "Jessica"&#93;
+irb(main):002:0&gt;</font></pre></div></p><p>The IRB program displays the values of the elements created in the array. To reference the array as a whole, you just need to reference the array variable name:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">irb(main):002:0&gt; names
+=&gt; &#91;"Rich", "Barbara", "Katie Jane", "Jessica"&#93;
+irb(main):003:0&gt;</font></pre></div></p><p>Ruby also provides some common functions for arrays.  Here's an example of the <em>sort</em> function:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">irb(main):003:0&gt; names.sort
+=&gt; &#91;"Barbara", "Jessica", "Katie Jane", "Rich"&#93;
+irb(main):004:0&gt;</font></pre></div></p><p>The sort function returns the array elements in a sorted order automatically. The array itself is still in the same order; just the output is sorted. This method allows you to easily sort data stored in an array without having to use any messy formulas!</p><p>To reference the array values individually, you must specify the index value using square brackets around the index value:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">irb(main):005:0&gt; names&#91;0&#93;
+=&gt; "Rich"
+irb(main):006:0&gt; names&#91;3&#93;
+=&gt; "Jessica"
+irb(main):007:0&gt;</font></pre></div></p><p><br>
+<strong>Hashes</strong></p><p><em>Hashes</em> are a special type of array variable. A hash stores multiple values similar to the array, but it uses strings as <em>keys</em> instead of numerical indexes. This allows you to reference a value by name instead of a number, sort of like a mini-database. Often it's easier to remember items by a name rather than which order they appear in the array index. Each key must be unique in the hash so you can use it to reference each value.</p><p>Creating a hash is a little tricky, as you must define both the key and value at the same time:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">name = { "key1" =&gt; "value1", "key2" =&gt; "value2", "key3" =&gt; "value3" }</font></pre></div></p><p>You must use the =&gt; symbol to assign the keys and values in the hash. Also notice that the hash uses braces to delimit the values. </p><p>To access the values in a hash variable, you need to know the individual key values, and like array index numbers, you must enclose them in square brackets:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">name&#91;"key1"&#93;
+name&#91;"key2"&#93;
+name&#91;"key3"&#93;</font></pre></div></p><p>But what if you don't know what keys are in a hash? Fortunately, there's a simple solution.</p><p><strong>Iterators</strong></p><p>Ruby provides a feature called an <em>iterator</em> to help us work with arrays and hashes. An iterator steps through the array or hash one index or key at a time to extract the stored values.</p><p>You use the <em>each</em> iterator method to extract individual values. The format of the each iterator statement is:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">array.each do |variable|
+<em>statements to execute</em>
+end</font></pre></div></p><p>This format may look odd. Ruby uses the variable between the pipe symbols to contain the value of the current data element in the array. You can place the variable anywhere within the code block. The <em>end</em> statement determines the end of the code to run for each iteration. Let's give this a try:</p><p><ol><li>Right-click in the lesson3 folder, and select <strong>New</strong> > <strong>Text Document</strong>.</li><p><p><li>Rename the new document <em>arraytest.rb</em>.</li></p><p><li>Double-click the arraytest.rb file to open it in the SciTE editor.</li></p><p><li>Enter the following code:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">family = &#91;"Rich", "Barbara", "Katie Jane", "Jessica"&#93;
+family.each do |member|
+   puts member + " is a member of my family"
+end</font></pre></div></li></p><p><li>Save the file, and run it from the InstantRails Ruby Console Window using the ruby command.</li></ol></p><p>The code should iterate through your array variable, displaying each individual value in a line.</p><p><p align="center"><img src="https://api.ed2go.com/CourseBuilder/2.0/images/resources/prod/rby-0/L03-05.jpg" border="0" alt="Output of the arraytest.rb program "><br><br>
+<font size="1">Output of the arraytest.rb program </font></p></p><p>If you want to try something really fancy, change the each iterator line to this:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">family.sort.each do |member|
+</font></pre></div></p><p>Then run the program. Notice that now the sort method is sorting the data in the array before the each iterator goes through it. This is an amazing feature of Ruby that often comes in handy.</p><p><strong>Iterating Hashes</strong></p><p>When working with hashes, if you don't know the key name you can't write the code to access the value! Ruby provides an iterator for hashes to help solve this problem.</p><p>The hash iterator works the same as the array iterator, but with a twist: You can extract the key as well as the value in each iteration. This uses the format:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">hash.each do |key, value|
+<em>statements to execute</em>
+end</font></pre></div></p><p>Let's work on a quick example:</p><p><ol><li>Right-click in the lesson3 folder, and select <strong>New</strong> > <strong>Text Document</strong>.</li><p><p><li>Rename the new document <em>hashtest.rb</em>.</li></p><p><li>Double-click the hashtest.rb file to open it in the SciTE editor.</li></p><p><li>Enter the following code:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">information = { "city" =&gt; "Chicago", "state" =&gt; "Illinois", "zip" =&gt; "60633" }
+information.each do |key, value|
+   puts key + ": " + value
+end</font></pre></div></li></p><p><li>Save the file, and run it from the InstantRails Ruby Console Window using the ruby command.</li></ol></p><p>When you see the output from this, you might be surprised.</p><p><p align="center"><img src="https://api.ed2go.com/CourseBuilder/2.0/images/resources/prod/rby-0/L03-06.jpg" border="0" alt="Output from the hashtest.rb program "><br><br>
+<font size="1">Output from the hashtest.rb program</font></p></p><p>The keys aren't listed in the same order in which we created them! This is a drawback to using hashes. If you require your data to appear in the same order, you need to write extra Ruby code to store the output of the iterator and display it appropriately&#8212;but we won't worry about that now.</p><p>That's enough for today! Let's go to Chapter 5 and wrap things up.
+            
+                <br />
+            
+                <br />
+                <br />
+                <br />
+                <b>
+                    Chapter 5
+                </b>
+                <br />
+                <p>
+<!-- rby LESSON 03 CHAPTER 5 -->
+<!-- START CHAPTER CONTENT -->
+
+<strong>Summary</strong></p><p>Today we discussed some more advanced features of the Ruby programming language that you'll be using in your Ruby on Rails project. First, you saw how to use if-then statements to alter the flow of the program execution based on conditions. The else statement allows you to specify additional code that Ruby will run if the if-then statement condition is false. The elsif statement allows you to chain together multiple conditions.<br />
+ <br />
+Next, we discussed the looping features in Ruby. You can use the times method for both integer constants and variables to determine the number of loops Ruby performs.</p><p>Similar to the times method, the while statement is also a looping function. However, it provides more control by utilizing a condition. Ruby checks the condition on each loop, and when the condition value is false, Ruby exits the while loop. You can also exit the while loop prematurely by using the break statement.</p><p>Finally, we discussed using arrays and hashes to contain a collection of related data (rather than using multiple variables). Arrays use numeric index values to reference each individual element in the array. Hashes use text keys to reference the individual elements. Ruby provides the each iterator to extract values from arrays or hashes without having to know the number of elements in the array or the names of the keys in a hash.</p><p>In the next lesson, we'll turn our attention to object-oriented programming. This is the last programming topic we need to cover before diving into the project code. Object-oriented programming is a major feature in Ruby on Rails, so it's important to understand just what it means and how it works before we try to use it.</p><p>As always, don't forget to do your assignment and quiz before moving on.
+            
+        
+                <br />
+                <br />
+                <br />
+                <b>Supplementary Material </b>
+                <br />
+                <center>
+                    <table border="0" cellpadding="0" cellspacing="0" width="400">
+                        <tbody>
+            
+                <tr bgcolor="#ffffff">
+                    <td align="left">
+                        <br>
+                        <a href="http://www.ruby-doc.org/core/" target="_blank">
+                            RDoc Documentation
+        </a>
+                        <br>
+                        http://www.ruby-doc.org/core/
+                    </td>
+                </tr>
+                <tr bgcolor="#f4f4e8">
+                    <td align="left">
+                        You'll find the core documentation for the Ruby programming language on this site. You can look up any Ruby statement, class, or method for the format, definition, and examples.
+        
+                    </td>
+                </tr>
+            
+                </tbody> </table> </center>
+            
+        <div id="pnlFaqs">
+	
+            <br />
+            <br />
+            <br />
+            <br />
+            <b>FAQs </b>
+            <br />
+            <br />
+            <strong>Q:</strong> Will the Ruby processor timeout if I create an endless loop?<br /><br /><strong>A:</strong> No, the Ruby processor will continue running until you stop it.<br /><br /><br /><strong>Q:</strong> Can you easily determine the number of elements in an array or hash?<br /><br /><strong>A:</strong> Yes, Ruby provides the length method, which returns the number of defined elements in an array or hash. Check out the Ruby RDoc documentation pages (which you can get to from the Supplementary Material section of this lesson) for all the array and hash methods available for your programs.
+        
+</div>
+        <div id="pnlAssignments">
+	
+            <br />
+            <br />
+            <br />
+            <br />
+            <b>Assignment </b>
+            <br />
+            <br />
+            <br />For today's assignment, I'd like you to work on using both arrays and loops. First, create an array variable that contains a list of names. Use the each iterator to loop through the array and display all of your names individually. Next, create a hash variable that contains multiple keys, such as the city, state, and ZIP code example shown in the lesson. Try adding more keys to the hash variable. Use an iterator to loop through it and display the keys and the values.<br /><br />If you're mathematically inclined, you can try your hand at using the Ruby loop feature to implement a mathematical algorithm that requires iterations. One of my favorite programs is the factorial. A <em>factorial</em> of a number is all the numbers from 1 to that number multiplied together. For example, the factorial of 5 is 1 * 2 * 3 * 4 * 5 = 120. <br /><br />To implement this, you can use the rand() function to pick a random number and assign it to a variable. Because the rand() function can pick 0, you'll need to either add 1 to your random number or create an if-then statement to check if the random number is 0 and stop the program.<br /><br />Once you have your random number, you can use the times method to loop through the code block the correct number of times to multiply all of the integers. You can keep track of the numbers using a separate counter variable.<br /><br />Stop by the Discussion Area if you have any problems with your code . . . or if you'd just like to show it off!
+            <br />
+            <br />
+            <br />
+        
+</div>
+        <table align="center" width="600">
+            <tbody>
+                <tr>
+                    <td>
+                        <p align="center">
+                            Copyright © 1997 -
+                            2010
+                            Education To Go. All rights reserved. The material on this site cannot be reproduced
+                            or redistributed unless you have obtained prior written permission from Education
+                            To Go. Education To Go and ed2go are registered trademarks of Education To Go, a
+                            part of Cengage Learning.
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,432 @@
+
+<html>
+<head><meta http-equiv="CACHE-CONTROL" content="NO-CACHE" /><meta http-equiv="PRAGMA" content="NO-CACHE" /><meta http-equiv="Expires" content="-1" /><title>
+	Introduction to Ruby Programming: Lesson 4
+</title><link href="./Stylesheets/classroom.css" rel="stylesheet" type="text/css" />
+
+    <script src="./Includes/classroom.js" language="javascript" type="text/javascript"></script>
+
+    <style type="text/css">
+        BODY
+        {
+            font-size: small;
+        }
+    </style>
+<link href="https://api.ed2go.com/CourseBuilder/2.0/images/resources/prod/global.css" rel="stylesheet" type="text/css" /><link href="https://api.ed2go.com/CourseBuilder/2.0/images/resources/prod/rby-0/course.css" rel="stylesheet" type="text/css" /></head>
+<body text="#000000" background="#FFFFFF">
+    <form name="form1" method="post" action="PrintLesson.aspx?lesson=4&amp;classroom=HxvNtrqghxRCdxwCx0etl2x3pqAYKhWu5EuV51NnDJk%3d" id="form1">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTkwNzU2MDEyMmRkEpxK/esTZu0SmFx2hxu+4ZoBoGo=" />
+</div>
+
+    <div>
+        <br />
+        <p>
+            <b>
+                Introduction to Ruby Programming: Lesson 4
+            </b>(printer-friendly version)
+            <br />
+            Your Instructor:
+            Richard Blum
+        </p>
+        <p>
+            <u>INSTRUCTIONS: </u>
+        </p>
+        <ul>
+            <li>To <b>print </b>this page, wait for the page to fully load. Once the document is
+                ready to print, simply click your browser's <b><i>File </i></b>menu and choose <b><i>
+                    Print </i></b>. </li>
+            <li>To <b>save </b>this page, click your browser's <b><i>File </i></b>menu and choose
+                <b><i>Save As</i></b>. Select a disk drive and folder to receive the file, and change
+                the name of the file to <b>less04.htm</b>.
+                To view the file while you are offline, just go to the drive and folder you selected
+                when you saved the file and double-click the file named <b>less04.htm</b>. Your browser will start and you will have access
+                to the file. </li>
+        </ul>
+        <hr />
+        
+                <br />
+                <br />
+                <br />
+                <b>
+                    Chapter 1
+                </b>
+                <br />
+                <p>
+<!-- rby LESSON 04 CHAPTER 1 -->
+<!-- START CHAPTER CONTENT -->
+
+<strong>Introduction</strong></p><p>Are you ready for more? Great! Today we're going to discuss an important feature of the Ruby programming language: object-oriented programming (OOP).</p><p>OOP is a completely different way of looking at programs, and we'll spend some time getting used to it. We'll be walking through all the basics today so there won't be any surprises when we start coding the Restaurant Review application (which will use OOP).</p><p>First, we'll take a look at the general principles behind OOP, and we'll see how it differs from the regular programming we've been doing so far. Next, we'll see how Ruby implements OOP features, and we'll start playing with some object-oriented code.</p><p>Finally, we'll dig a little deeper into Ruby object-oriented coding, and we'll see how we can customize prebuilt objects to work in our specific programming environment.</p><p>By the end of today, you should have a good foundation in OOP and be ready to incorporate it in your Ruby applications. Let's move on to Chapter 2 and start learning about OOP.
+            
+                <br />
+            
+                <br />
+                <br />
+                <br />
+                <b>
+                    Chapter 2
+                </b>
+                <br />
+                <p>
+<!-- rby LESSON 04 CHAPTER 2 -->
+<!-- START CHAPTER CONTENT -->
+
+<link href="https://api.ed2go.com/CourseBuilder/2.0/images/resources/prod/rby-0/rby.css" rel="stylesheet" type="text/css"><strong>Object-Oriented Programming Basics</strong></p><p>Before you can start working on OOP coding, you need to know how it works. OOP uses a completely different paradigm than the coding you've been doing so far. This requires that you think differently about how your programs work and how you code them.</p><p>In the past three lessons, we've been writing our Ruby code using the <em>procedural style</em> of programming. In this programming style, you create variables and functions within your code to perform certain procedures, such as storing values in variables and then checking them with structured statements. The data that you use and the functions you create are completely separate entities with no specific relation to each other.</p><p>In OOP, everything is related to objects. (I guess that's why they call it object-oriented!) Objects are the data you use in your application, grouped together into a single entity. </p><p>If you're writing a program that uses cars, you can create a car object that contains information on the car's weight, size, engine, and number of doors. If you're writing a program that tracks people, you might create a people object that contains information on each person's name, height, weight, and gender. Our Restaurant Review application will use three objects: articles, comments, and news items.</p><p>OOP uses <em>classes</em> to define objects. A class is the written definition in the program code that contains all of the characteristics of the object, using variables and functions. The benefit to OOP is that once you create a class for an object, you can use that same class anytime in any other application. Just plug in the class definition code and put it to use.</p><p>An OOP class is comprised of <em>members</em>. There are two types of members:</p><p><ul><li>Properties</li><p><p><li>Methods</li></ul></p><p>Class <em>properties</em> denote attributes for the object (such as the date, poster, and text of a restaurant review article). A class can contain many properties, with each property describing a different feature of the object.</p><p>The other type of class member is <em>methods</em>. Methods are similar to the standard Ruby functions that we've been using. A method performs an operation using the properties in a class. For instance, we could create class methods to retrieve a specific article from the database or add a comment to an existing article. Each method should be contained within a class and perform operations only in that class. The methods for one class shouldn't deal with properties in other classes.</p><p><strong>Creating Classes</strong></p><p>To create a class in Ruby, use the <em>class</em> keyword. Here's an example of a simple class definition in Ruby:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">class Product
+   attr_accessor :description, :price, :quantity<p><p>end</font></pre></div></p><p>The class definition begins with the class keyword and the name, <em>Product</em>. Next come the definitions for the members of Product. The class definition stops with the <em>end</em> keyword. In this example, the class Product only defines three properties:</p><p><ul><li><em>description</em>, which is a text value to describe the product</li><p><p><li><em>price</em>, which is a floating-point value for the price of the product</li></p><p><li><em>quantity</em>, which is an integer value for the number of items on hand</li></ul></p><p>In addition to the properties, this class definition includes an attribute keyword, <em>attr_accessor</em>. This keyword determines how the class controls access to the property from other program code. There are three types of property attributes:</p><p><ul><li>attr_reader, which provides read-only access to the property</li><p><p><li>attr_writer, which provides write-only access to the property</li></p><p><li>attr_accessor, which provides read-write access to the property</li></ul></p><p>By using these attribute keywords, we can prevent outside code from modifying class properties, or we can allow complete access to the properties, as we do in this example. We can also mix and match which properties are accessible and which aren't.</p><p><strong>Using Objects</strong></p><p>As you've just learned, Ruby code uses classes to define objects. <em>Instantiating</em> is the process of using the object in your program code. Once you instantiate an object, you can use it to reference the class and its properties and methods. To instantiate an object in Ruby code, use the following format:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">prod1 = Product.new</font></pre></div></p><p>This creates (instantiates) the object called prod1 using the Product class. Once you instantiate prod1, you can access the properties of the Product class from anywhere in your application:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">prod1.description = &quot;carrot&quot;
+prod1.price = 1.50
+prod1.quantity = 10</font></pre></div></p><p>This code sets values for the properties of this instance of the Product class. Notice that you must use a period to reference the individual properties of the object. The prod1 object now contains these values (carrot, 1.50, and 10), and you can use the properties anywhere within your application code to reference the values:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">puts prod1.description</font></pre></div></p><p>That code will give you the result <em>carrot</em>. </p><p>You can instantiate a second instance of the Product object, and the values won't conflict with the first instance of the Product object:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">prod2 = Product.new
+prod2.description = &quot;eggplant&quot;
+prod2.price = 2.25
+prod2.quantity = 5</font></pre></div></p><p>Now when you reference the prod2 object, you'll get the values related to the eggplant, while the prod1 object still contains the values related to the carrot.</p><p><strong>Adding Methods</strong></p><p>Besides defining properties, most classes also define methods that interact with the properties. Let's expand on the Product class a little more:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">class Product
+   attr_accessor :description, :price, :quantity<p><p>   def buyProduct(amount)
+      @quantity = @quantity - amount
+   end
+end</font></pre></div></p><p>This version of the class definition adds a method to the class. The buyProduct() method provides a function that allows program code to reduce the quantity value assigned for the object (for instance, when someone buys a product, your inventory is reduced).</p><p>Notice how the method references the quantity property in the class. It uses an odd variable name format, <em>@quantity</em>. The @quantity variable is called a <em>class variable</em>. It references the current value of the quantity property used in the class instance. If the prod1.quantity value is 10, the @quantity value for that instance is also 10.</p><p>The buyProduct() method requires a way to provide a value to the method. It does this using a method <em>parameter</em>. A parameter defines a value that the program that uses the method (called the <em>calling program</em>) passes to the code contained in the method. The variable within the parentheses retrieves the value supplied by the calling program. You can then use this variable anywhere within the code for the method.</p><p>In the example above, the parameter is defined as the variable <em>amount</em>. The amount parameter is subtracted from the quantity value whenever you reference the buyProduct() method of the class.</p><p>To use the class method, just reference it from the class instance in your program, the same way you reference properties:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">prod1.buyProduct(4)</font></pre></div></p><p>This code runs the buyProduct() method, passing along the value 4 as the amount value. Since the buyProduct() method alters the quantity value in the prod1 object, which was set at 10, the next time you reference the prod1.quantity, it will have the value 6.</p><p>Now that you have the basics of OOP under your belt, let's move on to Chapter 3 and start using OOP in a Ruby program.
+            
+                <br />
+            
+                <br />
+                <br />
+                <br />
+                <b>
+                    Chapter 3
+                </b>
+                <br />
+                <p>
+<!-- rby LESSON 04 CHAPTER 3 -->
+<!-- START CHAPTER CONTENT -->
+
+<link href="https://api.ed2go.com/CourseBuilder/2.0/images/resources/prod/rby-0/rby.css" rel="stylesheet" type="text/css"><strong>Using OOP in Ruby</strong></p><p>Let's write an example program using the Products class so we can see OOP in action. Just follow these steps:</p><p><ol><li>Create a new folder in the InstantRails rails_apps folder called <em>lesson4</em>.</li><p><p><li>Right-click in the lesson4 folder, and select <strong>New</strong> > <strong>Text Document</strong>.</li></p><p><li>Rename the new document <em>ooptest1.rb</em>.</li></p><p><li>Double-click the ooptest1.rb file to open it in the SciTE editor.</li></p><p><li>Enter the following code into the file:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">class Product
+  attr_accessor :description, :price, :quantity
+  
+  def buyProduct(amount)
+    @quantity = @quantity - amount
+  end
+  
+  def to_s
+    &quot;Product:  &quot; + @description + &quot;\n&quot; + \
+    &quot;Price:    &quot; + @price.to_s + &quot;\n&quot; + \
+    &quot;Quantity: &quot; + @quantity.to_s
+  end
+end<p><p>prod1 = Product.new
+prod1.description = "carrots"
+prod1.price = 1.25
+prod1.quantity = 10</p><p>puts &quot;Initial product.&quot;
+puts prod1</p><p>puts &quot;Now buying 4 carrots.&quot;
+prod1.buyProduct(4)
+puts prod1</font></pre></div></li></p><p><li>Save the file, and exit the SciTE editor.</li></p><p><li>Start the InstantRails application, click the <strong>I</strong> button, and select <strong>Rails Applications</strong>. <p><p><strong>Open the Ruby Console Window.</strong></li></p><p><li>Change to the lesson4 folder using the command:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">cd lesson4</font></pre></div></li></p><p><li>Run the new code using the ruby command:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">ruby ooptest1.rb</font></pre></div></li></ol></p><p>When you run the ooptest1.rb code, you should see the following output:</p><p><p align="center"><img src="https://api.ed2go.com/CourseBuilder/2.0/images/resources/prod/rby-0/L04-01.jpg" border="0" alt="The output of the ooptest1.rb program "><br><br>
+<font size="1">The output of the ooptest1.rb program </font></p></p><p>This example defines the Products class, which contains three properties (description, price, and quantity) and two methods. The buyProducts() method you've already seen. The other one is the to_s method, which allows you to display any class object in Ruby. You've already seen how to use the to_s method to display numbers in a puts statement.</p><p>Ruby automatically looks for the to_s method for any object that appears in the puts statement and converts the object into a printable string. The to_s method defined for our Product class formats the properties so they are easy to read in the output. Since the description property is a text value, we don't need to do anything special to display it. The quantity property is an integer value, and the price property is a floating-point value, so we must include the .to_s method to display them.</p><p>We also used the \n newline character to separate each line in the output. Plus we added labels to each line for the individual class properties. Notice that we also added spaces within the label text string that will appear in the program output to help format the layout.</p><p>You can now use the to_s method any time you need to display any properties of the Product class.</p><p><strong>Class Constructors</strong></p><p>When we created new Product instances in our program code (prod1 and prod2), we had to set a value for each individual property on a separate line. There's an easier way to do this. Most OOP languages provide a special method called a <em>constructor</em> to help create default values for an instance in one line.</p><p>The constructor allows you to automatically define property values when you instantiate a new object. Ruby uses the special method, <em>initialize</em>, to define the constructor:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">def initialize(desc, orgprice, quant)
+   @description = desc
+   @price = orgprice
+   @quantity = quant
+end</font></pre></div></p><p>The constructor for the Product class uses three parameters to assign values to the three class properties when you instantiate an object. Notice that to help alleviate confusion, I used different names for the parameter values. You could use the same names as the class variables, but that can get confusing! With the constructor in place, now you'll use the following format to create a new Product object:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">prod1 = Product.new(&quot;carrot&quot;, 1.25, 10)</font></pre></div></p><p>This defines the initial values for each of the properties of the object prod1. </p><p>Constructors provide us with another interesting feature in our classes. They can work with variable attributes to restrict access to the individual properties, providing complete control over how programs can use data in the object.</p><p>To demonstrate this, follow these steps to create the ooptest2.rb program:</p><p><ol><li>Right-click in the lesson4 folder, and select <strong>New</strong> > <strong>Text Document</strong>.</li><p><p><li>Rename the new document <em>Product.rb</em>.</li></p><p><li>Enter the following code into the file:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">class Product
+attr_reader :description, :price, :quantity  <p><p>def initialize(description, price, quantity)
+    @description = description
+    if (price &gt; 0)
+      @price = price
+      else
+        @price = 0
+    end
+      @quantity = quantity
+    end
+    
+    def  buyProduct(amount)
+       @quantity = @quantity - amount
+    end</p><p>    def setPrice(price)
+      if (price &gt; 0)
+        @price = price
+      else
+          @price = 0
+      end
+    end
+  
+  def to_s
+    &quot;Product:  &quot; + @description + &quot;\n&quot; + \
+    &quot;Price:    &quot; + @price.to_s + &quot;\n&quot; + \
+    &quot;Quantity: &quot; + @quantity.to_s + &quot;\n&quot;
+  end
+end</font></pre></div></li></p><p><li>Save the file, and exit the SciTE editor.</li></p><p><li>Right-click in the lesson4 folder, and select <strong>New</strong> > <strong>Text Document</strong>.</li></p><p><li>Rename the new document <em>ooptest2.rb</em>.</li></p><p><li>Double-click the ooptest2.rb file to open it in the SciTE editor.</li></p><p><li>Enter the following code into the file:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">require &quot;Product.rb&quot;
+puts &quot;Creating the new product.&quot;
+prod1 = Product.new(&quot;carrots&quot;, 1.25, 10)
+puts prod1
+puts &quot;Changing the price of the product.&quot;
+prod1.setPrice(2.75)
+puts prod1
+puts &quot;Trying to set the price the wrong way.&quot;
+prod1.price = 3.00
+puts prod1</font></pre></div></li></p><p><li>Save the file, exit the SciTE editor, and then start your InstantRails environment and run the ooptest2.rb code.</li></ol></p><p>You should see the following output:</p><p><p align="center"><img src="https://api.ed2go.com/CourseBuilder/2.0/images/resources/prod/rby-0/L04-02.jpg" border="0" alt="The output from the ooptest2.rb program "><br><br>
+<font size="1">The output from the ooptest2.rb program </font></p></p><p>We did things a little differently this time. This example demonstrates how to reuse your class code files instead of having to type the entire class definition every time you want to use it in a program. We stored the Product class definition in a separate file, Product.rb. Then we used the <em>require</em> function to recall it in our ooptest2.rb program. The require function loads the specified library file from the current directory. </p><p>The Product.rb code defines the Product class properties and methods. It uses the attr_reader attribute keyword to make the class properties read-only. Because of that, we needed to create a constructor to set the initial values for the properties in our subsequent program code. The class constructor allows the application program to set the values of the Product class properties when the application instantiates a new object.</p><p>The Product.rb code also defines a new method called setPrice(). The setPrice method provides another way for us to set the value of the price property besides the class constructor. The application program can use the setPrice() method to change the price property of a Product object instead of using the price property directly. In the ooptest2.rb code, we try to set the price property value to 3.00, which results in an error message. </p><p>When we use the setPrice() method to change the price property value, it works just fine. Another advantage of the setPrice() method is that it allows us to create our own programming code to control exactly how the price property value is manipulated. </p><p>In this example, we included programming code in the setPrice() method to ensure that the price is never set to a negative value. An if-then statement checks the value the program code passes to the setPrice() method. If the value is negative, the setPrice() method sets the price to 0. </p><p>In the next chapter, we'll look at how versatile OOP can be in your Ruby applications by reusing classes.
+            
+                <br />
+            
+                <br />
+                <br />
+                <br />
+                <b>
+                    Chapter 4
+                </b>
+                <br />
+                <p>
+<!-- rby LESSON 04 CHAPTER 4 -->
+<!-- START CHAPTER CONTENT -->
+
+<link href="https://api.ed2go.com/CourseBuilder/2.0/images/resources/prod/rby-0/rby.css" rel="stylesheet" type="text/css"> <strong>Extending Classes</strong></p><p>No, I'm not talking about trying to make this course longer! OOP provides a way to extend an existing class definition by adding additional functionality. That's the beauty of OOP&#8212;you can take classes and use them as they are, or you can modify just the pieces you need.</p><p>Defining a new class that's an extension of another class is called inheritance. The new class (called the child) inherits all of the members of the original class (called the parent). You can then add new members to the child class and even overwrite members of the parent class. If you use the overwritten members, the child members take precedence over the parent members.</p><p>To create a class extension, you use the class definition format, followed by the less-than symbol, which acts as the keyword to indicate inheritance, and last, the name of the class you're extending:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">class Soda &lt; Product
+end</font></pre></div></p><p>The new class, Soda, automatically contains all the members of the Product class. Without adding any code, you can assign values to the price property using the setPrice() method in Soda, just as you did with the Product class. You can also create new class members to add to Soda. Let's create another example and try this:</p><p><ol><li>Create a file called Soda.rb in the lesson4 folder.</li><p><p><li>Open the file in the SciTE editor, and add the following code:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">require &quot;Product.rb&quot;
+class Soda &lt; Product
+  
+  def initialize(description, price, quantity, size)
+    super(description, price, quantity)
+    @ounces = size
+  end
+  
+  def to_s
+    super + &quot;Size:   &quot; + @ounces.to_s + &quot;\n&quot;
+  end
+  
+end</font></pre></div></li></p><p><li>Save the file, and then create and open another file called ooptest3.rb<i\> in the lesson4 folder. Then add the following code to it:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">require &quot;Soda.rb&quot;<p><p>puts &quot;Creating new Soda object.&quot;
+prod1 = Soda.new(&quot;root beer&quot;, 2.55, 15, 18)
+puts prod1
+puts &quot;Buying five bottles.&quot;
+prod1.buyProduct(5)
+puts prod1</font></pre></div></i\></li></p><p><li>Save the file, exit the SciTE editor, and run the ooptest3.rb file in Ruby.</li></ol></p><p>You should see the following output:</p><p><p align="center"><img src="https://api.ed2go.com/CourseBuilder/2.0/images/resources/prod/rby-0/L04-03.jpg" border="0" alt="Output of ooptest3.rb program "><br><br>
+<font size="1">Output of ooptest3.rb program </font></p></p><p>Because the Soda class extends the Product class, you must use the require function to include the parent class definition code before you can write the child extension code. The class Soda adds a new property to the Product class, called ounces. It also overwrites two existing methods of the Product class: the initialize constructor and the to_s method. We want our constructor to allow us to define a value for the new ounces property and the to_s method to be able to display it. If we didn't override these methods in Soda, the code would use the Product methods, and we wouldn't see the ounces property.</p><p>Both the constructor and to_s method use another interesting feature of OOP. The super keyword allows the child class to access the parent property and method definitions. In this example, we include the super keyword to retrieve the constructor definition for the Product class in order to use it for the Soda constructor. We then add a new property (ounces) in the Soda constructor to track the size of the Soda object.</p><p>You use the same technique to print the child properties using the to_s method. In this situation, the super keyword represents the to_s Product method definition. The only thing the child to_s method must add is code to print the ounces property.</p><p><strong>Access Control for Methods</strong></p><p>You've seen how the attribute keywords can protect the class properties from having outside programs modify their values. There's another technique you must use if you want to protect your class methods.</p><p>By default, an object instance or child class can access all members defined in a class. Sometimes, though, you might not want to share all of the class methods or properties, but only a subset of them.</p><p>To relate this to our Product example, perhaps you'd like to provide the Product class for another application, but you don't want the application to set the price for the product after it's initialized. In this case, you wouldn't want the application to be able to run the setPrice() method.</p><p>Ruby allows you to specify an access control for each method defined in a class. This feature is called visibility. There are three access levels of visibility.</p><p><table width="100%" border="0" cellpadding="7" cellspacing="1" bgcolor="#F0EDF8"> <tr bordercolor="#F0EDF8"> <td height="0" colspan="2" bgcolor="#F0EDF8"><font size="2" face="Arial, Helvetica, sans-serif"><strong>Ruby Visibility Levels</strong></font></td> </tr> <tr bordercolor="#F0EDF8"> <td width="11%" height="0" bgcolor="#f9f8fC"><font size="2" face="Arial, Helvetica, sans-serif"><strong>Access Control</strong></font></td> <td width="89%" height="0" bgcolor="#f9f8fC"><font color="#333333" size="2" face="Arial, Helvetica, sans-serif"><strong>Description</strong></font></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF"><font size="2" face="Arial, Helvetica, sans-serif">public</font></td> <td bgcolor="#FFFFFF"><font size="2" face="Arial, Helvetica, sans-serif">The member can be accessed from outside of the class code.</font></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF"><font size="2" face="Arial, Helvetica, sans-serif">private</font></td> <td bgcolor="#FFFFFF"><font size="2" face="Arial, Helvetica, sans-serif">The member can only be accessed from inside the class code.</font></td> </tr> <tr valign="top"> <td bgcolor="#FFFFFF"><font size="2" face="Arial, Helvetica, sans-serif">protected</font></td> <td bgcolor="#FFFFFF"><font size="2" face="Arial, Helvetica, sans-serif">The member can only be accessed from a child class.</font></td> </tr> </table></p><p>By default, Ruby sets the access control for all methods to public. This allows any instance of an object created in a program, or child class created from the parent, to access the method. If you specify a method as private, that method can't be used outside of the class code.</p><p>Let's play with this and see how it works. First, let's make the buyProduct() method in the Products class a protected method:</p><p><ol><li>Double-click the Product.rb file to open it in the SciTE editor.</li><p><p><li>Add the following line to the bottom of the code, just before the closing end line:<br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">protected :buyProduct</font></pre></div></li></p><p><li>Save the file, and exit the SciTE editor.</li></ol></p><p>The protected keyword specifies which properties and methods are protected. This makes the buyProduct method only accessible from a child class. You can test this by running the ooptest3.rb program again. This time, you'll get the following error:</p><p><p align="center"><img src="https://api.ed2go.com/CourseBuilder/2.0/images/resources/prod/rby-0/L04-04.jpg" border="0" alt="Error message for accessing a protected method "><br><br>
+<font size="1">Error message for accessing a protected method </font></p></p><p>The error indicates that the program code doesn't have access to the buyProduct() method,  which is the visibility level we wanted.</p><p>By changing the buyProduct() method to protected, we can allow only a child class of Product to access the buyProduct() method. If an application program attempts to use the buyProduct() method, it fails (as you've seen in the prior example).</p><p>To demonstrate this further, we can create a method in the Soda class that modifies the buyProduct method from the parent Product class. Since the Soda class is a child class of the Product class, it will be allowed to use the buyProduct() method.</p><p>Follow these steps to modify the Soda.rb code file:</p><p><ol><li>Double-click the Soda.rb file to open it in the SciTE editor.</li><p><p><li>Add the following method definition anywhere within the code:</li><br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">def buySoda(amount)
+    if (amount &lt; 10)
+       buyProduct(amount)
+     end
+  end</font></pre></div></p><p><li>Save the file, and exit the SciTE editor.</li></ol></p><p>The buySoda() method uses the buyProduct() method from the parent class (Product). </p><p>Now let's create the ooptest4.rb code to use the new child method:</p><p><ol><li>Create a file called ooptest4.rb in the lesson4 folder.</li><p><p><li>Open the file in the SciTE editor, and add the following code:</li><br>
+<!-- 
+
+[WORKAROUND TAG]
+
+ --><br>
+<div class="noscroll"><pre><font style="font-family:Courier New, Courier; font-size:12px;">require &quot;Soda.rb&quot;<p><p>puts &quot;Creating new Soda object.&quot;
+prod1 = Soda.new("root beer", 2.55, 15, 18)
+puts prod1
+puts &quot;Buying five bottles.&quot;
+prod1.buySoda(5)
+puts prod1</font></pre></div></p><p><li>Save the file, and run it with the Ruby processor.</li></ol></p><p>You should now see the proper results, as shown here:</p><p><p align="center"><img src="https://api.ed2go.com/CourseBuilder/2.0/images/resources/prod/rby-0/L04-05.jpg" border="0" alt="The ooptest4.rb program output "><br><br>
+<font size="1">The ooptest4.rb program output </font></p></p><p>The buySoda method in the Soda child class accessed and modified the buyProduct protected method in the Product parent class.</p><p>That was a lot of in-depth programming for one day! Let's go over to Chapter 5 and summarize today's lesson.
+            
+                <br />
+            
+                <br />
+                <br />
+                <br />
+                <b>
+                    Chapter 5
+                </b>
+                <br />
+                <p>
+<!-- rby LESSON 04 CHAPTER 5 -->
+<!-- START CHAPTER CONTENT -->
+
+<strong>Summary</strong></p><p>Ruby is a full object-oriented programming language. Object-oriented programming allows you to combine both data and functions into classes and then use those classes any time you want to include the objects in any program, without having to recode everything!</p><p>Today you learned how to create a basic OOP class using Ruby and then use that class to create objects in an application. A class can contain any number of property and method members. You can define each member to be private, used only for the class, or to be public for use outside of the class code.</p><p>You also saw how to create constructors for classes to automatically define property values in a new class instance. This can save you from typing lots of program code to set each class property individually.</p><p>Finally, you discovered how to extend an existing class into a new class and reuse or modify the original code. This enables you to build onto classes that you or other programmers already have created.</p><p>This ends the hard-core Ruby programming lessons. In the next lesson, we'll use the Ruby on Rails feature to start creating the course project. You'll see just how easy it is to develop a full Web application with a minimal amount of coding!
+            
+        
+                <br />
+                <br />
+                <br />
+                <b>Supplementary Material </b>
+                <br />
+                <center>
+                    <table border="0" cellpadding="0" cellspacing="0" width="400">
+                        <tbody>
+            
+                <tr bgcolor="#ffffff">
+                    <td align="left">
+                        <br>
+                        <a href="http://java.sun.com/docs/books/tutorial/java/concepts/" target="_blank">
+                            Object-Oriented Programming Concepts
+        </a>
+                        <br>
+                        http://java.sun.com/docs/books/tutorial/java/concepts/
+                    </td>
+                </tr>
+                <tr bgcolor="#f4f4e8">
+                    <td align="left">
+                        Here's a great article on the Sun Java Web site that discusses the basics of object-oriented programming. While written from a Java perspective, it presents the programming information very well.
+        
+                    </td>
+                </tr>
+            
+                <tr bgcolor="#ffffff">
+                    <td align="left">
+                        <br>
+                        <a href="http://www.approximity.com/ruby/Comparison_rb_st_m_java.html" target="_blank">
+                            Ruby versus Other Object-Oriented Languages
+        </a>
+                        <br>
+                        http://www.approximity.com/ruby/Comparison_rb_st_m_java.html
+                    </td>
+                </tr>
+                <tr bgcolor="#f4f4e8">
+                    <td align="left">
+                        This article compares the object-oriented features of Ruby against other OOP languages, such as Java and C++. If you're coming from another OOP language background, you can easily see how it differs from Ruby.
+        
+                    </td>
+                </tr>
+            
+                </tbody> </table> </center>
+            
+        <div id="pnlFaqs">
+	
+            <br />
+            <br />
+            <br />
+            <br />
+            <b>FAQs </b>
+            <br />
+            <br />
+            <strong>Q:</strong> If the class definition contains a constructor, can it also contain a destructor?<br /><br /><strong>A:</strong> Yes, although this is somewhat tricky. Some object-oriented programming languages provide a special method to handle the object when you need to delete it (called the destructor). Ruby uses the finalize method to allow you to create code for when an instance object is destroyed. The tricky part is that there's no way of knowing when Ruby will destroy an object. Ruby uses a feature called garbage collection to determine when objects aren't being used anymore in a program. There's not a set time that Ruby performs the garbage collection.
+        
+</div>
+        <div id="pnlAssignments">
+	
+            <br />
+            <br />
+            <br />
+            <br />
+            <b>Assignment </b>
+            <br />
+            <br />
+            <br />You've seen how to create classes for objects used in programming. Now it's time to try this on your own. Think of an object that could be used in an application, such as a book, a CD, or even a car. Create a class definition for the object. Create properties that describe the features of the object and methods for handling the properties.<br /><br />Once you've created your class, use it in a simple Ruby script to create instances of the object. Create two instances of the object, and assign values to each instance. Does Ruby keep all of the values straight?<br /><br />Now create a child class. Add new properties that only belong to the child class. Create a new constructor for the child class that reuses the constructor for the parent class. Use your child class in a Ruby script to create instances of the object.
+            <br />
+            <br />
+            <br />
+        
+</div>
+        <table align="center" width="600">
+            <tbody>
+                <tr>
+                    <td>
+                        <p align="center">
+                            Copyright © 1997 -
+                            2010
+                            Education To Go. All rights reserved. The material on this site cannot be reproduced
+                            or redistributed unless you have obtained prior written permission from Education
+                            To Go. Education To Go and ed2go are registered trademarks of Education To Go, a
+                            part of Cengage Learning.
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </form>
+</body>
+</html>
