@@ -1,0 +1,18 @@
+<p>
+  <b>Poster:</b>
+  <%=h @review.poster %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%=h @review.date %>
+</p>
+
+<p>
+  <b>Article:</b>
+  <%=h @review.article %>
+</p>
+
+
+<%= link_to 'Edit', edit_review_path(@review) %> |
+<%= link_to 'Back', reviews_path %>
